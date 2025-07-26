@@ -1,21 +1,23 @@
 const {execSync} = require("child_process");
 
+const host = 'github.com'
+
 const commands = [
-    "git clone git@deltasampler:deltasampler/block_world.git block_world",
-    "git clone git@deltasampler:deltasampler/cl_ts.git cl",
-    "git clone git@deltasampler:deltasampler/driving.git",
-    "git clone git@deltasampler:deltasampler/engine_ts.git engine",
-    "git clone git@deltasampler:deltasampler/gravitation.git gravitation",
-    "git clone git@deltasampler:deltasampler/gui_ts.git gui",
-    "git clone git@deltasampler:deltasampler/model_viewer.git",
-    "git clone git@deltasampler:deltasampler/panel_templater.git",
-    "git clone git@deltasampler:deltasampler/pixel_sandbox.git",
-    "git clone git@deltasampler:deltasampler/plant_gen.git",
-    "git clone git@deltasampler:deltasampler/ray_marcher.git",
-    "git clone git@deltasampler:deltasampler/simple_demos.git",
-    "git clone git@deltasampler:deltasampler/square.git",
-    "git clone git@deltasampler:deltasampler/tetris.git",
-    "git clone git@deltasampler:deltasampler/turmite.git"
+    `git clone git@${host}:deltasampler/block_world_ts.git`,
+    `git clone git@${host}:deltasampler/cl_ts.git`,
+    `git clone git@${host}:deltasampler/driving_ts.git`,
+    `git clone git@${host}:deltasampler/engine_ts.git`,
+    `git clone git@${host}:deltasampler/gravitation_ts.git`,
+    `git clone git@${host}:deltasampler/gui_ts.git`,
+    `git clone git@${host}:deltasampler/model_viewer_ts.git`,
+    `git clone git@${host}:deltasampler/panel_templater_ts.git`,
+    `git clone git@${host}:deltasampler/pixel_sandbox_ts.git`,
+    `git clone git@${host}:deltasampler/plant_gen_ts.git`,
+    `git clone git@${host}:deltasampler/ray_marcher_ts.git`,
+    `git clone git@${host}:deltasampler/simple_demos_ts.git`,
+    `git clone git@${host}:deltasampler/square_ts.git`,
+    `git clone git@${host}:deltasampler/tetris_ts.git`,
+    `git clone git@${host}:deltasampler/turmite_ts.git`
 ];
 
 for (const command of commands) {
