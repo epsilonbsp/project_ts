@@ -6,21 +6,20 @@ export default defineConfig({
     plugins: [preact()],
     resolve: {
         alias: {
-            '@block_world': path.resolve(__dirname, "./modules/block_world_ts/source"),
-            '@cl': path.resolve(__dirname, "./modules/cl_ts/source"),
-            '@driving': path.resolve(__dirname, "./modules/driving_ts/source"),
-            '@engine': path.resolve(__dirname, "./modules/engine_ts/source"),
-            '@gravitation': path.resolve(__dirname, "./modules/gravitation_ts/source"),
-            '@gui': path.resolve(__dirname, "./modules/gui_ts/source"),
-            '@model_viewer': path.resolve(__dirname, "./modules/model_viewer_ts/source"),
-            '@panel_templater': path.resolve(__dirname, "./modules/panel_templater_ts/source"),
-            '@pixel_sandbox': path.resolve(__dirname, "./modules/pixel_sandbox_ts/source"),
-            '@plant_gen': path.resolve(__dirname, "./modules/plant_gen_ts/source"),
-            '@ray_marcher': path.resolve(__dirname, "./modules/ray_marcher_ts/source"),
-            '@simple_demos': path.resolve(__dirname, "./modules/simple_demos_ts/source"),
-            '@square': path.resolve(__dirname, "./modules/square_ts/source"),
-            '@tetris': path.resolve(__dirname, "./modules/tetris_ts/source"),
-            '@turmite': path.resolve(__dirname, "./modules/turmite_ts/source")
+            '@block_world': path.resolve(__dirname, "./modules/block_world/source"),
+            '@cl': path.resolve(__dirname, "./modules/cl/source"),
+            '@engine': path.resolve(__dirname, "./modules/engine/source"),
+            '@gravitation': path.resolve(__dirname, "./modules/gravitation/source"),
+            '@gui': path.resolve(__dirname, "./modules/gui/source"),
+            '@model_viewer': path.resolve(__dirname, "./modules/model_viewer/source"),
+            '@panel_templater': path.resolve(__dirname, "./modules/panel_templater/source"),
+            '@pixel_sandbox': path.resolve(__dirname, "./modules/pixel_sandbox/source"),
+            '@plant_gen': path.resolve(__dirname, "./modules/plant_gen/source"),
+            '@ray_marcher': path.resolve(__dirname, "./modules/ray_marcher/source"),
+            '@simple_demos': path.resolve(__dirname, "./modules/simple_demos/source"),
+            '@square': path.resolve(__dirname, "./modules/square/source"),
+            '@tetris': path.resolve(__dirname, "./modules/tetris/source"),
+            '@turmite': path.resolve(__dirname, "./modules/turmite/source")
         }
     }
 });
