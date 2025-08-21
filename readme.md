@@ -1,1 +1,2 @@
-# Vite Preact TS
+# Project TS
+Project for learning different things
