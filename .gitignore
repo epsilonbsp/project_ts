@@ -25,4 +25,4 @@ dist-ssr
 
 # Modules
 modules/*
-!modules/clone.cjs
+!modules/clone.js
