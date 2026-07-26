@@ -1,0 +1,466 @@
+/* variables */
+.gui_window_root {
+    --gui_background_color: #151617;
+    --gui_text_color: #ffffff;
+    --gui_border_color: #ffffff;
+
+    --gui_fill_background_color: #29497a;
+    --gui_fill_background_color_hover: #397dcc;
+    --gui_fill_background_color_active: #4295fa;
+    --gui_fill_text_color: #ffffff;
+
+    --gui_input_background_color: #20324d;
+    --gui_input_background_color_hover: #284a70;
+    --gui_input_background_color_active: #346cae;
+    --gui_input_inner_background_color: #3d85e0;
+    --gui_input_text_color: #ffffff;
+
+    --gui_select_option_background_color: rgba(0, 0, 0, 0.9);
+
+    --gui_scrollbar_track_color: #20324d;
+    --gui_scrollbar_thumb_color: #29497a;
+    --gui_scrollbar_thumb_color_hover: #397dcc;
+    --gui_scrollbar_thumb_color_active: #4295fa;
+
+    --gui_font_family: monospace;
+    --gui_font_size: 12px;
+    --gui_line_height: 16px; 
+
+    --scrollbar_width: 4px;
+}
+
+/* root window */
+.gui_window_root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* window */
+.gui_window {
+    padding: 4px;
+    overflow-y: auto;
+    background-color: var(--gui_background_color);
+}
+
+/* window scroll */
+.gui_window::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+}
+
+.gui_window::-webkit-scrollbar-track {
+    background-color: var(--gui_scrollbar_track_color);
+}
+
+.gui_window::-webkit-scrollbar-thumb {
+    background-color: var(--gui_scrollbar_thumb_color);
+}
+
+.gui_window::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gui_scrollbar_thumb_color_hover);
+}
+
+.gui_window::-webkit-scrollbar-thumb:active {
+    background-color: var(--gui_scrollbar_thumb_color_active);
+}
+
+.gui_window::-webkit-scrollbar-button {
+    width: var(--scrollbar_width);
+    height: var(--scrollbar_width);
+}
+
+/* collapsing header */
+.gui_collapsing_header {
+    margin-bottom: 4px;
+}
+
+.gui_collapsing_header > .gui_title {
+    font-family: var(--gui_font_family);
+    font-size: 14px;
+    line-height: 1;
+    background-color: var(--gui_fill_background_color);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+    color: var(--gui_fill_text_color);
+}
+
+.gui_collapsing_header > .gui_title:hover {
+    background-color: var(--gui_fill_background_color_hover);
+}
+
+.gui_collapsing_header > .gui_title:active {
+    background-color: var(--gui_fill_background_color_active);
+}
+
+.gui_collapsing_header > .gui_title::before {
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10.39px solid var(--gui_fill_text_color);
+}
+
+.gui_collapsing_header.gui_is_collapsed > .gui_title::before {
+    transform: rotate(270deg);
+}
+
+.gui_collapsing_header > .gui_container {
+    padding: 4px;
+}
+
+.gui_collapsing_header.gui_is_collapsed > .gui_container {
+    display: none;
+}
+
+/* text */
+.gui_text {
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    margin-bottom: 4px;
+    color: var(--gui_text_color);
+}
+
+.gui_text pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* label */
+.gui_label {
+    font-family: var(--gui_font_family);
+    font-size: 10px;
+    line-height: 1;
+    display: block;
+    color: var(--gui_text_color);
+}
+
+/* input */
+.gui_input {
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    outline: none;
+    background-color: var(--gui_input_background_color);
+    border: none;
+    color: var(--gui_input_text_color);
+    border-width: 1px;
+    padding: 2px;
+}
+
+.gui_input:hover {
+    background-color: var(--gui_input_background_color_hover);
+}
+
+.gui_input:active {
+    background-color: var(--gui_input_background_color_active);
+}
+
+.gui_input::-webkit-inner-spin-button {
+    filter: invert(1);
+}
+
+/* input_range */
+.gui_input_range_container {
+    height: 20px;
+    position: relative;
+}
+
+.gui_input_range_container::before {
+    content: attr(data-content);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    color: var(--gui_input_text_color);
+}
+
+.gui_input_range {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    appearance: none;
+    outline: none;
+    background-color: var(--gui_input_background_color);
+    border: none;
+}
+
+.gui_input_range:hover {
+    background-color: var(--gui_input_background_color_hover);
+}
+
+.gui_input_range:active {
+    background-color: var(--gui_input_background_color_active);
+}
+
+.gui_input_range::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: var(--gui_input_inner_background_color);
+}
+
+/* bool */
+.gui_bool {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.gui_bool input {
+    margin: 0;
+}
+
+/* input_number */
+.gui_input_number {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+/* gui_slider_number */
+.gui_slider_number {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+/* input_vec */
+.gui_input_vec {
+    margin-bottom: 4px;
+}
+
+.gui_input_vec > .gui_container {
+    display: grid;
+    grid-template-columns: repeat(var(--size), minmax(0px, 1fr));
+    gap: 4px;
+}
+
+/* color_edit */
+.gui_color_edit {
+    margin-bottom: 4px;
+}
+
+.gui_color_edit.gui_rgba > .gui_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4px;
+}
+
+.gui_color_edit .gui_input_color {
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 20px;
+    width: 100%;
+}
+
+.gui_color_edit .gui_input_color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+/* input_text */
+.gui_input_text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+/* gui_radio */
+.gui_radio_group {
+    margin-bottom: 4px;
+}
+
+.gui_radio_group > .gui_container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.gui_radio_group_option {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    gap: 4px;
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    color: var(--gui_input_text_color);
+    user-select: none;
+}
+
+.gui_radio_group_option::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: var(--gui_input_background_color);
+}
+
+.gui_radio_group_option:hover {
+    cursor: default;
+}
+
+.gui_radio_group_option:hover::before {
+    background-color: var(--gui_input_background_color_hover);
+}
+
+.gui_radio_group_option.gui_selected::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--gui_input_inner_background_color);
+    border-radius: 100%;
+}
+
+/* checkbox */
+.gui_checkbox_group {
+    margin-bottom: 4px;
+}
+
+.gui_checkbox_group > .gui_container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.gui_checkbox_group_option {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    color: var(--gui_input_text_color);
+    user-select: none;
+}
+
+.gui_checkbox_group_option::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    background-color: var(--gui_input_background_color);
+}
+
+.gui_checkbox_group_option:hover {
+    cursor: default;
+}
+
+.gui_checkbox_group_option.gui_selected::before {
+    content: '\2713';
+    color: var(--gui_input_inner_background_color);
+    font-weight: bold;
+}
+
+.gui_checkbox_group_option:hover::before {
+    background-color: var(--gui_input_background_color_hover);
+}
+
+/* select */
+.gui_select {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.gui_select_button {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background-color: var(--gui_input_background_color);
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    color: var(--gui_input_text_color);
+    user-select: none;
+}
+
+.gui_select_button:hover {
+    background-color: var(--gui_input_background_color_hover);
+}
+
+.gui_select_container {
+    display: none;
+}
+
+.gui_select_button.gui_open + .gui_select_container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--gui_select_option_background_color);
+}
+
+.gui_select_option {
+    padding: 4px;
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    color: var(--gui_input_text_color);
+    user-select: none;
+}
+
+.gui_select_option:hover {
+    background-color: var(--gui_input_background_color_hover);
+}
+
+.gui_select_option:active {
+    background-color: var(--gui_input_background_color_active);
+}
+
+/* button */
+.gui_button button {
+    width: 100%;
+    padding: 4px;
+    border: none;
+    background-color: var(--gui_fill_background_color);
+    font-family: var(--gui_font_family);
+    font-size: var(--gui_font_size);
+    line-height: var(--gui_line_height);
+    color: var(--gui_fill_text_color);
+    margin-bottom: 4px;
+}
+
+.gui_button button:hover {
+    background-color: var(--gui_fill_background_color_hover);
+}
+
+.gui_button button:active {
+    background-color: var(--gui_fill_background_color_active);
+}
+
+/* canvas */
+.gui_canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* table */
+.gui_table {
+    width: 100%;
+}
+
+.gui_table td {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
